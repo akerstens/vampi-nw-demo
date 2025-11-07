@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "07b56784-02d4-47a0-9bcd-03b5bc52f8dd",
-		"name": "VAmPI",
+		"name": "VAmPI", 
 		"description": "OpenAPI v3 specs for VAmPI",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
