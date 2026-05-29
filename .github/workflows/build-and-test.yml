@@ -38,7 +38,7 @@ jobs:
           ANALYZE: "false"
 
   deploy:
-    needs: scan 
+    needs: active-scan 
     runs-on: ubuntu-latest 
     steps:
       - name: echo
