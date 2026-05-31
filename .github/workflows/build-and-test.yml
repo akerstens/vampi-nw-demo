@@ -37,7 +37,7 @@ jobs:
           TEST_GROUP_ID: "62f5921c-d200-4f6f-a104-29674ad30a94"
           BRANCH_NAME: "${{ github.ref_name }}"
           VERBOSE: "true"
-          ANALYZE: "false"
+          ANALYZE: "true"
 
   deploy:
     needs: active-scan 
