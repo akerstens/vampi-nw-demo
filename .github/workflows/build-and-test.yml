@@ -28,10 +28,10 @@ jobs:
         run: docker ps
         
       - name: Test VAmPI
-        run: sleep 10 && curl http://localhost:5002/ --retry 10 --retry-delay 2 
+        run: sleep 10 && curl http://localhost:5002/vapi/v1/ --retry 10 --retry-delay 2 
 
       - name: Createdb
-        run: curl http://localhost:5002/createdb
+        run: curl http://localhost:5002/vapi/v1/createdb
 
       - name: Run Active Scan
         uses: nonamesec/active-scan-action@v1
