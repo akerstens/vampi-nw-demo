@@ -15,8 +15,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Run VAmPI 
-        run: docker compose up -d
+#      - name: Run VAmPI 
+#        run: docker compose up -d
+
+      - name: Run Standalone VAmPI Container
+        # Run only the vulnerable container flavor directly on host port 5002
+        run: |
+          docker build -t vampi_vulnerable:latest .
+          docker run -d -p 5002:5000 -e vulnerable=1 vampi_vulnerable:latest
 
       - name: check docker containers
         run: docker ps
