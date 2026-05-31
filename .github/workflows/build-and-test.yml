@@ -17,35 +17,15 @@ jobs:
 
       - name: Run VAmPI 
         run: docker compose up -d
+
+      - name: check docker containers
+        run: docker ps
         
       - name: Test VAmPI
-        run: sleep 5 && curl http://localhost:5002/ --retry 10 --retry-delay 1 
+        run: sleep 5 && curl http://host.docker.internal:5002/ --retry 10 --retry-delay 1 
 
       - name: Createdb
-        run: curl http://localhost:5002/createdb
-
-# --- FLOOD THE FOLDER WITH EXPECTED FILENAMES ---
-      - name: Stage All Spec Variations
-        run: |
-          mkdir -p akamai
-          # If your file is in the root, copy it. If it's already in akamai/, use that as the source:
-          SRC_FILE=$(find . -name "openapi3.yml" | head -n 1)
-          
-          echo "Found source file at: $SRC_FILE"
-          
-          cp "$SRC_FILE" akamai/openapi.json
-          cp "$SRC_FILE" akamai/openapi.yaml
-          cp "$SRC_FILE" akamai/openapi3.json
-          cp "$SRC_FILE" akamai/openapi3.yaml
-          cp "$SRC_FILE" akamai/swagger.json
-          cp "$SRC_FILE" akamai/swagger.yaml
-          cp "$SRC_FILE" akamai/akamai.json
-          cp "$SRC_FILE" akamai/akamai.yaml
-
-          chmod -R 777 akamai
-          
-          echo "Contents of akamai directory:"
-          ls -la akamai
+        run: curl http://host.docker.internal:5002/createdb
 
       - name: Run Active Scan
         uses: nonamesec/active-scan-action@v1
