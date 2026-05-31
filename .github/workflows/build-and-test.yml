@@ -41,6 +41,8 @@ jobs:
           cp "$SRC_FILE" akamai/swagger.yaml
           cp "$SRC_FILE" akamai/akamai.json
           cp "$SRC_FILE" akamai/akamai.yaml
+
+          chmod -R 777 akamai
           
           echo "Contents of akamai directory:"
           ls -la akamai
