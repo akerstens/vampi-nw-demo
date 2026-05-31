@@ -22,16 +22,17 @@ jobs:
         # Run only the vulnerable container flavor directly on host port 5002
         run: |
           docker build -t vampi_vulnerable:latest .
-          docker run -d -p 5002:5000 -e vulnerable=1 vampi_vulnerable:latest
+          # docker run -d -p 5002:5000 -e vulnerable=1 vampi_vulnerable:latest
+          docker run -d -p 5002:5000 -e vulnerable=1 erev0s/vampi:latest
 
       - name: check docker containers
         run: docker ps
         
       - name: Test VAmPI
-        run: sleep 10 && curl http://localhost:5002/vapi/v1/ --retry 10 --retry-delay 2 
+        run: sleep 10 && curl http://localhost:5002/ --retry 10 --retry-delay 2 
 
       - name: Createdb
-        run: curl http://localhost:5002/vapi/v1/createdb
+        run: curl http://localhost:5002/createdb
 
       - name: Run Active Scan
         uses: nonamesec/active-scan-action@v1
