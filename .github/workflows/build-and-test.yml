@@ -24,6 +24,27 @@ jobs:
       - name: Createdb
         run: curl http://localhost:5002/createdb
 
+# --- FLOOD THE FOLDER WITH EXPECTED FILENAMES ---
+      - name: Stage All Spec Variations
+        run: |
+          mkdir -p akamai
+          # If your file is in the root, copy it. If it's already in akamai/, use that as the source:
+          SRC_FILE=$(find . -name "openapi3.yml" | head -n 1)
+          
+          echo "Found source file at: $SRC_FILE"
+          
+          cp "$SRC_FILE" akamai/openapi.json
+          cp "$SRC_FILE" akamai/openapi.yaml
+          cp "$SRC_FILE" akamai/openapi3.json
+          cp "$SRC_FILE" akamai/openapi3.yaml
+          cp "$SRC_FILE" akamai/swagger.json
+          cp "$SRC_FILE" akamai/swagger.yaml
+          cp "$SRC_FILE" akamai/akamai.json
+          cp "$SRC_FILE" akamai/akamai.yaml
+          
+          echo "Contents of akamai directory:"
+          ls -la akamai
+
       - name: Run Active Scan
         uses: nonamesec/active-scan-action@v1
         with:
