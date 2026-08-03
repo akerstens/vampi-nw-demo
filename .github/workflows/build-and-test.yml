@@ -40,7 +40,6 @@ jobs:
           BRANCH_NAME: "${{ github.ref_name }}"
           VERBOSE: "true"
           ANALYZE: "true"
-          USE_ZAP: "false"
 
   deploy:
     needs: active-scan 
