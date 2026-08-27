@@ -36,6 +36,7 @@ jobs:
           ACTIVE_API_URL: "https://active-demo.nonamesec.com/active"
           CORE_CLI_CLIENT_ID: "9cc6ef9433355655678b4e3adc8b4ae165f7bed5a4664f66cc3a381acb6fcd3b"
           CORE_CLI_CLIENT_SECRET: "ba9fca69c8a1fbe47195671f1dfcce39605e0bd5dcdca31973a1a1b857c84ff73b3a61b351687d8a19a55f8336a8b9bce17b30cb32d8bd70ebf4b0d3c05e0ead"
+          ACTIVE_API_TOKEN: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlLZXkiOiIyMmEwZmJmNy0yMjZjLTRlN2EtYjUzOS01NzFmZTAwYzUxZTQiLCJpZCI6IjI2Zjk2NzQ3LTdkNDktNGE3MC04Y2YwLWEyZThlOGNiOGNjZSIsImlhdCI6MTc4Nzg0ODU3MiwiZXhwIjoxODAzNDAwNTcyLCJhdWQiOlsibm9uYW1lLW1hbmFnZW1lbnQtYXBpIl0sImlzcyI6Im5vYXV0aCJ9.cZOJXAdy_ossAKztWfjTa2uYKSBKfGxyJapZ5iVIaCOz8Du7UtuKh6O8p_DN8AQnoGGTvT7hZoVnst8F5WgJzY2aZ6PwD3fbVOC37iebgFEVpHWHMrT_O8gDn-6xzFBSAPrdQNSwbUOESoWHik1ECElvtyS-7vX3BaLwHAQ9n4LURO3-x4JaWl_hFQBEOAtGLz5t0vI6FnY2Cbe1mYveg7wF0I-iFI7K9xvBs4rbJzEdyMl7eQpFz7pJrmT2edAzjeFml2pJOY71oiZkq4lK7JYTSuSVkcbSVPu0lCBOLR_R0LVfOKEZ9G-1O184t3CKW_0DUu3TPiR4gZaEvmOt3Q"
           ACTIVE_BACKEND_URI: "https://active-demo.nonamesec.com/active/backend"
           TEST_GROUP_ID: "892b51de-67cf-4328-beea-3ade61bcdeb2"
           BRANCH_NAME: "${{ github.ref_name }}"
